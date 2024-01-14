@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Encabezado de la página-->
+    <header>
+        <div class="logoHeader">
+            <img src="./assets/img/tazadecafe.png" alt="Logo de la página - taza de café para llevar">
+            <h1>MenúCafé</h1>
+        </div>
+        <nav class="navHeader">
+            <ul>
+                <li><a href="#menuRef">Menú</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <!--Página Principal-->
+    <main>
+        <!-- Sección Menú-->
+        <section id="menu">
+            <div id="contenedorBuscadorPedidoMenu">
+                <div id="contenedorBuscador">
+                    <div class="buscadorMenu">
+                        <!--Al presioarse la lupa muestra el elementos/los elementos, escritos en el input.
+                        Para volver a mostrar el menú, la entrada de input debe encontrarse vacia y luego presionar el botón de lupa-->
+                        <img type="submit" src="./assets/img/lupa.png" alt="Lupa">
+                        <input type="text" name="" id="texto">
+                        <button id="eliminarBusqueda">
+                            <p> X </p>
+                        </button>
+                    </div>
+                    <div class="categoriasMenu">
+                        <!--Al precionarse un botón se refiere la categoria del menú correspondiente-->
+                        <a href="#caliente">
+                            <button class="calienteRef">
+                                <img src="./assets/img/cafe.png" alt="Taza de café">
+                                <p>Caliente</p>
+                            </button>
+                        </a>
+                        <a href="#frioRef">
+                            <button class="frio">
+                                <img src="./assets/img/cafehelado.png" alt="Taza de café con hielo">
+                                <p>Frio</p>
+                            </button>
+                        </a>
+                        <a href="#saladoRef">
+                            <button class="salado">
+                                <img src="./assets/img/tostado.png" alt="Pan tostado">
+                                <p>Salado</p>
+                            </button>
+                        </a>
+                        <a href="#tortasRef">
+                            <button class="tortas">
+                                <img src="./assets/img/torta.png" alt="Porción de torta">
+                                <p>Tortas</p>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div id="ContenedorMiPedido">
+                    <div id="contenedorPedido">
+                        <!--Se agrega contenido con javaScript respecto al pedido realizado-->
+                    </div>
+                    <div id="contenedorEliminarPedido">
+                        <!--Se agrega elemento para borrar el contenido de contenedorPedido-->
+                    </div>
+                    <div id="continuarCompraPedido">
+                        <!--Se agrega elemento para dirigirse a la sección compra-->
+                    </div>    
+                </div>
+                <div id="contenedorMenu">
+                    <!--Se agrega contenido con javaScript respecto al menú-->
+                </div>
+            </div>
+        </section>
+        <section id = "compra">
+            <div id = "formulario">
+                <!--Se crea el formulario del cliente-->
+            </div>
+        </section>
+    </main>
+
+    <script src="./main.js"></script>
+
+</body>
+</html>
