@@ -1,0 +1,695 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+body {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 450px auto auto;
+    grid-template-areas:
+    "encabezado"
+    "principal"
+    "pie"
+    ;
+}
+
+/* Encabezado de la página */
+
+header {
+    grid-area: "encabezado";
+    background-color: rgb(244, 244, 244);
+    text-decoration: none;
+    color: rgb(20,20,25);
+    font-weight: bolder;
+}
+
+#contenedorLogoTitulo {
+    display: flex;
+}
+
+#contenedorLogoTitulo img {
+    margin: 10px 0px 10px 10px;
+    height: 40px;
+    width: 40px;
+}
+
+#contenedorLogoTitulo h1 {
+    font-size: large;
+    text-decoration: none;
+    margin: 15px 0px 15px 0px;
+    padding: 5px;
+}
+
+#contenedorNavegador {
+    background-image: url("../assets/img/cafe.jpeg");
+    height: 390px;
+    padding: 10px;
+    font-size: larger;
+}
+
+#contenedorNavegador ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+#contenedorNavegador ul a {
+    text-decoration: none;
+    text-align: justify;
+    color: white;
+    margin: 0px 10px 0px 10px;
+}
+
+/*Página principal*/
+
+main {
+    grid-area: "principal";
+    background-color: rgb(244, 244, 244);
+}
+
+#contenedorTituloMenu {
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+#cotenedorBuscadorPedidoMenu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 
+Se realiza CSS para el contenedor de busqueda por texto y por botón de categoria
+Se realiza CSS para el contenedor de muestra de pedido y de muestra de Precios
+ */
+
+#cotenedorBuscadorPedido {
+    background-color: rgb(244, 244, 244);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "Bucador Pedido";
+    justify-content: space-evenly;
+    align-items: center;
+    width: 820px;
+    padding: 10px 0px 10px 0px;
+}
+
+#contenedorBuscador {
+    grid-area: "Buscador";
+    border: 2px solid black;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    height: 280px;
+    width: 400px;
+    margin: 10px;
+}
+
+.tituloBuscador {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.buscadorPorTexto {
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.buscadorPorTexto input {
+    background-color: white;
+    border: 2px solid black;
+    border-left: none;
+    height: 25px;
+    width: 305px;
+    padding: 5px;
+    outline: none;
+}
+
+.buscadorPorTexto img {
+    border: 2px solid black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: none;
+    background-color: white;
+    height: 25px;
+    width: 25px;
+    padding: 2px;
+}
+
+.buscadorPorTexto button {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: white;
+    height: 25px;
+    width: 30px;
+    padding: 2px;
+}
+
+.buscadorPorCategoria {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.buscadorPorCategoria button {
+    background-color: white;
+    border: 2px solid black;
+    font-weight: bold;
+    border-radius: 50px;
+    height: 75px;
+    width: 75px;
+    margin: 10px;
+    padding: 2px;
+}
+
+.buscadorPorCategoria button a {
+    text-decoration: none;
+    color: black;
+}
+
+.buscadorPorTexto button img{
+    height: 18px;
+    border: none;
+    width: 20px;
+}
+
+.categoria img {
+    height: 35px;
+    width: 40px;
+}
+
+#contenedorPedido {
+    grid-area: "Pedido";
+    border: 2px solid black;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    height: 280px;
+    width: 400px;    
+    padding: 10px;
+    margin: 10px;
+}
+
+#contenedorPedido div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.carritoPedido {
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    grid-template-areas: "Titulo" "Producto";
+}
+
+.tituloPedido {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#productoPedido {
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow-y: scroll;
+    height: 65px;
+    padding: 5px;
+}
+
+.pedido {
+    display: grid;
+    grid-template-rows: auto 1fr; 
+    gap: 5px;
+  }
+  
+  .carritoPedidoTitulo {
+    grid-row: 1; 
+    grid-column: 1 / span 3; 
+  }
+  
+  .menosProductos,
+  .masProductos,
+  .cantidadProductos,
+  .precioProductos,
+  .eliminarProductosBoton {
+    grid-row: 2; 
+  }
+
+.carritoPedidoTitulo {
+    justify-content: left;
+}
+
+.pedido h4 {
+    border: 2px solid black;
+    border-radius: 5px; 
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    height: 25px;
+    width: 100px;
+    padding: 3px;
+}
+
+.pedido button {
+    grid-area: "Producto";
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px; 
+    background-color: white;
+    height: 25px;
+    width: 30px;
+}
+
+.pedido .eliminarProductosBoton {
+    background-color: red;
+}
+
+.eliminarProductosBoton img {
+    height: 20px;
+    width: 25px;
+}
+
+#envioPedido {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#envioPedido h3 {
+    align-items: center;
+    width: 250px;
+}
+
+.envioPedidoBoton {
+    grid-area: "BotonesEnvio";
+    display: flex;
+    justify-content: space-evenly;
+    width: 150px;
+}
+
+.envioPedidoBoton button {
+    font-weight: bold;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+    padding: 5px;
+}
+
+#eliminarcomprarPedido {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+#eliminarcomprarPedido button {
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    width: 150px;
+    height: 25px;
+}
+
+#notaProductos {
+    color: red;
+    font-size: smaller;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* 
+Se realiza CSS el menú
+ */
+
+#contenedorMenu {
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 820px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.categoriaMenu {
+    font-size: larger;
+    text-align: center;
+    margin: 10px;
+ }
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.producto {
+    border: 2px solid black;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 100px auto;
+    grid-template-rows: auto;
+    grid-template-areas: "Bandeja Producto";
+    width: 350px;
+    margin: 10px;
+}
+
+.producto img {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    grid-area: "Bandeja";
+    background-color: white;
+    width: 100px;
+}
+
+.caracteristicasProducto{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(240, 240, 240);
+    font-weight: bold;
+    grid-area: "Producto";
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.producto p {
+    margin: 2px;
+}
+
+.producto button {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    margin: 2px;
+    padding: 2px;
+}
+
+.precio {
+    color: rgb(0, 150, 0);
+}
+
+.agregar {
+    font-weight: bold;
+    width: 150px;
+    height: 25px;
+}
+
+/* Se realiza el CSS del contenedorCompra */
+.contenedorCompraNoVisualizar {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedorCompraVisualizar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#contenedorTituloCompra {
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin: 10px;
+}
+
+/* Se completa el CSS para los datos del cliente */
+#cotenedorClienteFormasDePago {
+    background-color: rgb(244, 244, 244);
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas: "Cliente Pago";
+    justify-content: space-evenly;
+    align-items: center;
+    width: 820px;
+    padding: 10px 0px 10px 0px;
+}
+
+#contenedorCliente {
+    grid-area: "Cliente";
+    border: 2px solid black;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    height: 170px;
+    width: 400px;
+    margin: 10px;
+}
+
+.tituloCliente {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+#contenedorCliente div {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.contClienteDato {
+    display: grid;
+    grid-template-columns: 90px auto;
+    grid-template-rows: auto;
+    grid-template-areas: "Etiqueta EntradaDato";
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.contClienteDato label {
+    grid-area: "Etiqueta";
+    font-weight: bold;
+    padding: 3px;
+}
+
+.contClienteDato input {
+    grid-area: "EntradaDato";
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    height: 25px;
+    padding: 5px;
+    outline: none;
+}
+
+#contenedorFormasDePago {
+    grid-area: "Pago";
+    border: 2px solid black;
+    background-color: rgb(240, 240, 240);
+    border-radius: 5px;
+    height: 170px;
+    width: 400px;
+    margin: 10px;
+}
+
+.tituloPago {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+#contenedorFormasDePago div {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formaPago {
+    margin-top: 50px;
+    margin: 15px;
+}
+
+.formaPago input {
+    grid-area: "EntradaCheckbox";
+    display: none;
+    height: 25px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.formaPago label {
+    grid-area: "FormaPago";
+    position: relative;
+    font-weight: bold;
+    margin: 5px;
+    padding: 3px;
+}
+
+.formaPago label::after {
+    content: '';
+    display: inline-block;
+    height: 15px;
+    width: 18px;
+    position: absolute;
+    top: 5px;
+    left: 304px;
+    background: white;
+    border-radius: 25px;
+}
+
+.formaPago label::before {
+    content: '';
+    display: inline-block;
+    height: 19px;
+    width: 45px;
+    position: absolute;
+    left: 300px;
+    background: grey;
+    border-radius: 20px;
+}
+
+.formaPago input:checked + label::after {
+    left: 323px;
+}
+
+.formaPago input:checked + label::before {
+    background: rgb(7, 103, 7);
+}
+
+#contenedorAtrasFinPago {
+    display: flex;
+    justify-content: space-evenly;
+    width: 820px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#contenedorAtrasFinPago button {
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 5px; 
+    background-color: white;
+    height: 25px;
+    width: 300px;
+}
+
+/* Se agrega efecto de sombra sobre los botones */
+button:hover {
+    box-shadow: 0 0 5px rgb(50, 100, 50);
+}
+
+.buscadorPorTexto button:hover {
+    box-shadow: 1px 0 5px rgb(50, 100, 50);
+}
+
+/*  */
+/* Estilo para el título de la sección */
+#comentariosSeccion {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+#contenedorTituloSeccion {
+    text-align: center;
+    justify-content: center;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+  
+/* Estilo solo para los comentarios */
+#comentariosSeccion .comentario {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #comentariosSeccion .comentario h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  #comentariosSeccion .comentario p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+/* Pié de página */
+footer {	
+    grid-area: "pie";
+    background-color: rgb(191,197,207);
+	color: #fff;
+    text-decoration: none;
+    padding: 5px;
+    justify-content: center;
+}
+
+footer img {
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+}
+
+footer a {
+    text-decoration: none;
+    color: rgb(20,20,25);
+    font-weight: bolder;
+    font-size: small;
+}
+
+#contenedoTituloFooter {
+    text-align: center;
+    padding: 5px;
+    padding-left: 35px;
+    margin: 5px;
+}
+
+#contenedorLinksFooter {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+}
+
+#contenedorWhatsapp {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#contenedorMail {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#contenedorInstagram {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
